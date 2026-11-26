@@ -52,9 +52,16 @@ For each condition, the following sensors are created:
 | wind_max_speed      | Max Wind speed.                      |
 | wind_speed          | Wind speed.                          |
 
-The integration creates an image entity for the weather radar if the radar option is enabled.
-
 Details about the API are available in the [AEMET OpenData documentation](https://opendata.aemet.es/dist).
+
+{% include integrations/option_flow.md %}
+
+{% configuration_basic %}
+Gather data from AEMET weather radar:
+  description: "Download the AEMET weather radar image and create an image entity for it. Disabled by default."
+Gather data from AEMET weather stations:
+  description: "Get current observations from the nearest AEMET weather station, in addition to the town forecast. The `station_id`, `station_name`, and `station_timestamp` sensors are only created when this option is enabled. Enabled by default."
+{% endconfiguration_basic %}
 
 ## Removing the integration
 
